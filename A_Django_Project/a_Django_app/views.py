@@ -7,12 +7,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import ContactForm
 
+#6.3.1 (comment other returns to view this output)
 def home(request):
     return HttpResponse("I love Python!")
 
+#6.3.3 (comment other returns to view this output)
 def home(request):
    return HttpResponse("<h1>I love Python!</h1>")
 
+#start 6.5.2 
+#comment other returns to view this output
 def home(request):
     return render(request, 'home.html')
 
@@ -34,3 +38,4 @@ def contact(request):
         print(name, email)
     form = ContactForm()
     return render(request, 'form.html', {'form': form})
+#end 6.5.2
